@@ -5,19 +5,18 @@
  * To learn more about custom policies, visit: https://docs.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-overview
  */
  export const b2cPolicies = {
-    names: {
-        signUpSignIn: "B2C_1_susi_reset_v2",
-        editProfile: "B2C_1_edit_profile_v2"
-    },
     authorities: {
         signUpSignIn: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/B2C_1_susi_reset_v2",
+            authority: "https://wahaniyab2c.b2clogin.com/wahaniyab2c.onmicrosoft.com/B2C_1_susi_v1",
         },
         editProfile: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/B2C_1_edit_profile_v2"
+            authority: "https://wahaniyab2c.b2clogin.com/wahaniyab2c.onmicrosoft.com/B2C_1_edit_profile_v1",
+        },
+        passwordReset: {
+            authority: "https://wahaniyab2c.b2clogin.com/wahaniyab2c.onmicrosoft.com/B2C_1_password_reset_v1" 
         }
     },
-    authorityDomain: "fabrikamb2c.b2clogin.com"
+    authorityDomain: "wahaniyab2c.b2clogin.com"
 }
 
 /**
@@ -25,6 +24,6 @@
  * The current application coordinates were pre-registered in a B2C tenant.
  */
 export const apiConfig: { scopes: string[]; uri: string } = {
-    scopes: ['https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read'],
+    scopes: ['https://wahaniyab2c.onmicrosoft.com/api/Hello.Read'],
     uri: 'https://fabrikamb2chello.azurewebsites.net/hello'
 };

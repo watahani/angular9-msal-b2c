@@ -3,6 +3,7 @@ import { MsalService, MsalBroadcastService, MSAL_GUARD_CONFIG, MsalGuardConfigur
 import { AuthenticationResult, EventMessage, EventType, PopupRequest, RedirectRequest } from '@azure/msal-browser';
 import { Subject } from 'rxjs';
 import { filter, takeUntil, tap } from 'rxjs/operators';
+import { b2cPolicies } from './b2c-config'
 
 interface Payload extends AuthenticationResult {
   idTokenClaims: {
@@ -65,7 +66,7 @@ export class AppComponent implements OnInit, OnDestroy {
             // login request with reset authority
             const resetPasswordFlowRequest = {
               scopes: ['openid'],
-              authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/B2C_1_susi_reset_v2"
+              authority: b2cPolicies.authorities.passwordReset.authority
             };
 
             this.authService.loginRedirect(resetPasswordFlowRequest as RedirectRequest);
