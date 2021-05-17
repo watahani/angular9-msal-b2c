@@ -5,6 +5,11 @@
  * To learn more about custom policies, visit: https://docs.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-overview
  */
  export const b2cPolicies = {
+    names: {
+        signUpSignIn: "B2C_1_susi_v1",
+        editProfile: "B2C_1_edit_profile_v1",
+        passwordReset: "B2C_1_password_reset_v1"
+    },
     authorities: {
         signUpSignIn: {
             authority: "https://wahaniyab2c.b2clogin.com/wahaniyab2c.onmicrosoft.com/B2C_1_susi_v1",

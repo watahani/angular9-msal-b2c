@@ -41,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
         let payload: Payload = <AuthenticationResult>result.payload;
 
-        if (payload.idTokenClaims['tfp'] === "B2C_1_susi_reset_v2") {
+        if (payload.idTokenClaims['tfp'] === b2cPolicies.names.passwordReset) {
           window.alert('Password reset done! \nPlease sign-in again.');
           return this.logout();
         }
